@@ -1,0 +1,3 @@
+class Num < Token
+
+end
