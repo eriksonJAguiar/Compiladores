@@ -11,6 +11,26 @@
     
 ###Gramática 
 
+    <LinguagemE>::= <insercao>; | <saida>; | <declaracao>; | <operacaoes>; 
+    <insercao>::= <<< <num>   
+    <saida>::= >>> <var> | >>> <string>
+    <operacoes>::= <var><atribuicao><var><op><var> | <var><atribuicao><num> | <var><atribuicao><var> | <resto> | <var><atribuicao><num> | <var><atribuicao><num><op><num> | <var><atribuicao><var><op><num> | <var><atribuicao><num><op><var>   
+    <operadores>::= + | - | * 
+    <atribuicao>::= <-
+    <resto>::= rest(<num>,<num>)
+    <num>::= <nums> | <nums><num>
+    <nums>::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+    <tipo>::= inteiro 
+    <declaracao>::= <tipo><var> | <tipo><var> <atribuicao> <num>
+    <var>::= <letras> | <letras><num> | <letras>_<letras><num> | <letras><num>_<letras><num> | <letras><num>_<letras> 
+    <letras>::= <letra> | <letra><letras>
+    <letra>::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z 
+    <string>::= palavra(<caracter>)
+    <caracter>::= <stmt>
+    <stmt>::= stmt | stmt<stmt>
+    
+    
+###Tokens
     
 
     
