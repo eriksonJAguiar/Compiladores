@@ -59,7 +59,7 @@
 | operadores  |    -                        |        (-)                                |                                |
 | operadores  |    /                        |        (/)                                |                                |
 | atribuicao  |   <-                        |Sequencia de <,- (<-)                      |                                |
-| resto       |resto(num,num)               |resto([0-9]+,[0-9]+)                       | palavra reservada              |
+| resto       |resto(num,num)               |resto([1-9][0-9]*,[1-9][0-9]*)             | palavra reservada              |
 | tipo        |inteiro                      |      inteiro                              | palavra reservada              |
 | id          |qualquer id                  | [a-zA-Z]+(_)?[a-zA-Z0-9]+                 |ponteiro para tabela de simbolos|
 | num         |qualquer sequencia de digitos| [1-9][0-9]*                               |                                |
