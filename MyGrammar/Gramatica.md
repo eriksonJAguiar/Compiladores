@@ -13,7 +13,7 @@
 
     <LinguagemE>::= <insercao>; | <saida>; | <declaracao>; | <operacaoes>; | <operacoesMat>;
     <ler>::= <<< <var>   
-    <escrever>::= >>> <var> | >>> <string>
+    <escrever>::= >>> <var> | >>> <string> | >>> <string>,<var>
     <operacoes>::= <var><atribuicao><var><op><var> | <var><atribuicao><num> | <var><atribuicao><var> | <resto> | <var><atribuicao><num> | <var><atribuicao><num><op><num> | <var><atribuicao><var><op><num> | <var><atribuicao><num><op><var> 
     <operacoesMat>::= <num><op><num><operacoesMat> | <var><op><var><operacoesMat> | &
     <op>::= + | - | * | /
@@ -36,7 +36,7 @@
 ###Gramática na forma de Expressões Regulares
 
     ler ->  <<< id  
-    escrever -> >>> id | >>> <string>
+    escrever -> >>> id | >>> string | >>> string,id
     operadores -> (+|-|*|/) 
     atribuicao -> <-
     resto -> rest(num,num)
