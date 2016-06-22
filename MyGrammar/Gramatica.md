@@ -11,7 +11,7 @@
     
 ###Gramática 
 
-    <LinguagemE>::= <insercao>; | <saida>; | <declaracao>; | <operacaoes>; | <operacoesMat>;
+    <LinguagemE>::= <insercao>;<LinguagemE> | <ler>;<LinguagemE> | <escrever>;<LinguagemE> | <declaracao>;<LinguagemE> | <operacaoes>;<LinguagemE> | <operacoesMat>;<LinguagemE> | &
     <ler>::= <<< <var>   
     <escrever>::= >>> <var> | >>> <string> | >>> <string>,<var>
     <operacoes>::= <var><atribuicao><var><op><var> | <var><atribuicao><num> | <var><atribuicao><var> | <resto> | <var><atribuicao><num> | <var><atribuicao><num><op><num> | <var><atribuicao><var><op><num> | <var><atribuicao><num><op><var> 
