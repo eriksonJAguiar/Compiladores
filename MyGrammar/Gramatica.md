@@ -62,7 +62,7 @@
 | resto       |resto(num,num)               |resto([0-9]+,[0-9]+)                       | palavra reservada              |
 | tipo        |inteiro                      |      inteiro                              | palavra reservada              |
 | id          |qualquer id                  | [a-zA-Z]+(_)?[a-zA-Z0-9]+                 |ponteiro para tabela de simbolos|
-| num         |qualquer sequencia de digitos| [a-zA-Z]+(_)?[a-zA-Z0-9]+                 |                                |
+| num         |qualquer sequencia de digitos| [0-9]+                                    |                                |
 | letra       |a,b,C,D,E                    | [a-zA-Z]+                                 |                                | 
 | string      |palavra(ola mundo)           | palavra(qualquer caracter da tabela ASCII)| palavra reservada              | 
 |final        |;                            |  ( ; )                                    |                                | 
