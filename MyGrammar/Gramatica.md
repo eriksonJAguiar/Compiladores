@@ -6,7 +6,7 @@
     *Saida de dados equivale a >>>
     *Operadores equivale a + - / * rest(resto da divisao)
     *variáveis equivale a...z e A..Z
-    *String equivale a palavra(sua string aqui)
+    *String equivale a palavra->sua string aqui
     *atribuição de valores as variaveis equivale a x <- 2
     
 ###Gramática 
@@ -28,12 +28,22 @@
 ###Tokens
     
 
-| Tokens      |     Padrão                              | Atributo                                 |
-|-------------|-----------------------------------------|------------------------------------------|
-|  var        |[a-zA-Z]+(_)?[a-zA-Z0-9]*                |  ID                                      |
-| <<<         |  <<<                                    |                                          |
-| >>>         |  >>>                                    |                                          |
-| string      |palavra -> ([\s\S]+ \|( )*[\s\S]* \| ( )*)  |                                          |
+| Tokens        |     Padrão                                 | Atributo                                 |
+|---------------|--------------------------------------------|------------------------------------------|
+|  var          |[a-zA-Z]+(_)?[a-zA-Z0-9]*                   |  ID                                      |
+| <<<           |  <<<                                       |                                          |
+| >>>           |  >>>                                       |                                          |
+| string        |palavra([\s\S]+ \|( )*[\s\S]* \| ( )*)      |                                          |
+| sep           |       (,)                                  |                                          |
+| inteiro       |  inteiro                                   |                                          |
+| soma          |  +                                         |                                          |
+| divisao       |  /                                         |                                          |
+| subtração     |  -                                         |                                          |
+| multiplicação |  *                                         |                                          |
+| resto         | resto\([\w\d]*\,[\w\d]*\)                  |                                          |
+| num           | (-)?(\d)+                                  |                                          |
+| att           | <-                                         |                                          |
+
 
                                    
     
