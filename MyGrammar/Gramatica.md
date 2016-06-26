@@ -13,8 +13,8 @@
 
     <LinguagemE>::= <cmd> | <cmd>;<LinguagemE>
     <cmd>::= <leia> | <escreva> | <opecao> | <atribuicao> | <opercao> | <declaracao>
-    <ler>::= <<< var   
-    <escrever>::= >>> <texto>
+    <ler>::= read var   
+    <escrever>::= write <texto>
     <texto>::= string | var | <texto> 
     <declaracao>::= <tipo><vars> | <tipo>var<atribuicao>
     <vars>::= var | var sep <vars> | var <atribuicao> sep <vars>
@@ -31,8 +31,8 @@
 | Tokens        |     Padrão                                 | Atributo                                 |
 |---------------|--------------------------------------------|------------------------------------------|
 |  var          |[a-zA-Z]+(_)?[a-zA-Z0-9]*                   |  ID                                      |
-| <<<           |  <<<                                       |                                          |
-| >>>           |  >>>                                       |                                          |
+| read          |  <<<                                       |                                          |
+| write         |  >>>                                       |                                          |
 | string        |palavra([\s\S]+ \|( )*[\s\S]* \| ( )*)      |   ponteiro para tabela de símbolos       |
 | sep           |       (,)                                  |                                          |
 | inteiro       |  inteiro                                   |                                          |
