@@ -11,7 +11,7 @@
     
 ###Gramática 
 
-    <LinguagemE>::= <cmd> | <cmd>;<LinguagemE>
+    <LinguagemE>::= <cmd> | <cmd><final><LinguagemE>
     <cmd>::= <leia> | <escreva> | <opecao> | <atribuicao> | <opercao> | <declaracao>
     <ler>::= read var   
     <escrever>::= write <texto>
@@ -30,19 +30,20 @@
 
 | Tokens        |     Padrão                                 | Atributo                                 |
 |---------------|--------------------------------------------|------------------------------------------|
-|  var          |[a-zA-Z]+(_)?[a-zA-Z0-9]*                   |  ID                                      |
-| read          |  <<<                                       |                                          |
-| write         |  >>>                                       |                                          |
-| string        |palavra([\s\S]+ \|( )*[\s\S]* \| ( )*)      |   ponteiro para tabela de símbolos       |
-| sep           |       (,)                                  |                                          |
-| inteiro       |  inteiro                                   |                                          |
-| soma          |  +                                         |                                          |
-| divisao       |  /                                         |                                          |
-| subtração     |  -                                         |                                          |
-| multiplicação |  *                                         |                                          |
-| resto         | resto\([\w\d]*\,[\w\d]*\)                  |                                          |
-| num           | (-)?(\d)+                                  |                                          |
-| att           | <-                                         |                                          |
+|  var          |[a-zA-Z]+"_"?[a-zA-Z0-9]*                   |  ID                                      |
+| read          |  "<<<"                                     |                                          |
+| write         |  ">>>"                                     |                                          |
+| string        |"palavra("[a-zA-Z]+[a-zA-Z ]*")"            |   ponteiro para tabela de símbolos       |
+| sep           |       ","                                  |                                          |
+| inteiro       |  "inteiro"                                 |                                          |
+| soma          |  "+"                                       |                                          |
+| divisao       |  "/"                                       |                                          |
+| subtração     |  "-"                                       |                                          |
+| multiplicação |  "*"                                       |                                          |
+| resto         | "resto("[a-zA-Z0-9]+","[a-zA-Z0-9]+")"     |                                          |
+| num           | "-"?[0-9][0-9]*                            |                                          |
+| att           | "<-"                                       |                                          |
+| final         | ";"                                        |                                          |
 
 
                                    
