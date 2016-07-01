@@ -1,23 +1,26 @@
 %{
-	int nline;
+  #include<stdio.h>
+
+  int nline;
 
 %}
 %%
-[a-zA-Z]+"_"?[a-zA-Z0-9]* printf("VAR");
-[\n] {nline++;}
-";" printf("Final");
-"<<<" printf("read");
-">>>" printf("write");
-"palavra("[a-zA-Z]+[a-zA-Z ]*")" printf("string");
-"," printf("sep");
-"inteiro" printf("inteiro");
-"+" printf("soma");
-"-" printf("subtração");
-"/" printf("divisao");
-"*" printf("multiplicação");
-"resto("[a-zA-Z0-9]+","[a-zA-Z0-9]+")" printf("resto");
-"-"?[0-9][0-9]* printf("num");
-"<-" printf("att");
+"inteiro" printf("INTEIRO");
+[a-zA-Z]+"_"?[a-zA-Z0-9]* printf("VAR %s",yytext);
+[\n] nline++;
+";" printf("FINAL");
+"<<<" printf("READ");
+">>>" printf("WRITE");
+"palavra("[a-zA-Z]+[a-zA-Z ]*")" printf("STRING %s",yytext);
+"," printf("SEP");
+"+" printf("SOMA");
+"-" printf("SUBTRACACAO");
+"/" printf("DIVISAO");
+"*" printf("MULTIPLICACAO");
+"resto("[a-zA-Z0-9]+","[a-zA-Z0-9]+")" printf("RESTO");
+"-"?[0-9][0-9]* printf("NUM %s",yytext);
+"<-" printf("ATT");
+. printf("Caracter Inesperado na linha %d",nline);
 %%
 int main() {
     yylex();

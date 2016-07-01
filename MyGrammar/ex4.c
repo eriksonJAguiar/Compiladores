@@ -1,6 +1,6 @@
-#line 2 "lex.yy.c"
+#line 2 "ex4.c"
 
-#line 4 "lex.yy.c"
+#line 4 "ex4.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -376,8 +376,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 17
-#define YY_END_OF_BUFFER 18
+#define YY_NUM_RULES 16
+#define YY_END_OF_BUFFER 17
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -387,12 +387,12 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[56] =
     {   0,
-        0,    0,   18,   16,    3,   12,    9,    8,   10,   11,
-       14,    4,   16,   16,    2,    2,    2,    2,   14,   14,
-       15,    0,    0,    2,    2,    2,    2,    2,    2,    5,
-        6,    2,    2,    2,    2,    2,    2,    2,    2,    2,
-        2,    2,    0,    1,    2,    0,    0,    0,    0,    0,
-        0,    7,    0,   13,    0
+        0,    0,   17,   16,    2,   12,    9,    7,   10,   11,
+       14,    3,   16,   16,    1,    1,    1,    1,   14,   14,
+       15,    0,    0,    1,    1,    1,    1,    1,    1,    4,
+        5,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    0,    1,    1,    0,    0,    0,    0,    0,
+        0,    6,    0,   13,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
@@ -508,11 +508,9 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "linguagemE.l"
 #line 2 "linguagemE.l"
-  #include<stdio.h>
+	   int nline;
 
-  int nline;
-
-#line 516 "lex.yy.c"
+#line 514 "ex4.c"
 
 #define INITIAL 0
 
@@ -730,9 +728,9 @@ YY_DECL
 		}
 
 	{
-#line 7 "linguagemE.l"
+#line 5 "linguagemE.l"
 
-#line 736 "lex.yy.c"
+#line 734 "ex4.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -791,91 +789,86 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 8 "linguagemE.l"
-printf("INTEIRO");
+#line 6 "linguagemE.l"
+printf("VAR");
 	YY_BREAK
 case 2:
+/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 9 "linguagemE.l"
-printf("VAR %s",yytext);
+#line 7 "linguagemE.l"
+{nline++;}
 	YY_BREAK
 case 3:
-/* rule 3 can match eol */
 YY_RULE_SETUP
-#line 10 "linguagemE.l"
-nline++;
+#line 8 "linguagemE.l"
+printf("Final");
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 11 "linguagemE.l"
-printf("FINAL");
+#line 9 "linguagemE.l"
+printf("read");
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 12 "linguagemE.l"
-printf("READ");
+#line 10 "linguagemE.l"
+printf("write");
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 13 "linguagemE.l"
-printf("WRITE");
+#line 11 "linguagemE.l"
+printf("string");
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 14 "linguagemE.l"
-printf("STRING %s",yytext);
+#line 12 "linguagemE.l"
+printf("sep");
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 15 "linguagemE.l"
-printf("SEP");
+#line 13 "linguagemE.l"
+printf("inteiro");
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 16 "linguagemE.l"
-printf("SOMA");
+#line 14 "linguagemE.l"
+printf("soma");
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 17 "linguagemE.l"
-printf("SUBTRACACAO");
+#line 15 "linguagemE.l"
+printf("subtração");
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 18 "linguagemE.l"
-printf("DIVISAO");
+#line 16 "linguagemE.l"
+printf("divisao");
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 19 "linguagemE.l"
-printf("MULTIPLICACAO");
+#line 17 "linguagemE.l"
+printf("multiplicação");
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 20 "linguagemE.l"
-printf("RESTO");
+#line 18 "linguagemE.l"
+printf("resto");
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 21 "linguagemE.l"
-printf("NUM %s",yytext);
+#line 19 "linguagemE.l"
+printf("num");
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 22 "linguagemE.l"
-printf("ATT");
+#line 20 "linguagemE.l"
+printf("att");
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 23 "linguagemE.l"
-printf("Caracter Inesperado na linha %d",nline);
-	YY_BREAK
-case 17:
-YY_RULE_SETUP
-#line 24 "linguagemE.l"
+#line 21 "linguagemE.l"
 ECHO;
 	YY_BREAK
-#line 879 "lex.yy.c"
+#line 872 "ex4.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1876,7 +1869,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 24 "linguagemE.l"
+#line 21 "linguagemE.l"
 
 
 int main() {
