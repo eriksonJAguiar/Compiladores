@@ -1,0 +1,14 @@
+#define INTEIRO 1
+#define VAR 2
+#define READ 3
+#define WRITE 4
+#define STRING 5
+#define SEP 6
+#define SOMA 7
+#define SUB 8
+#define DIV 9
+#define MULT 10
+#define RESTO 11
+#define NUM 12
+#define ATT 13
+#define FINAL 14
