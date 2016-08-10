@@ -7,7 +7,7 @@
 %}
 %%
 "inteiro"                                 return INTEIRO;
-[a-zA-Z]+"_"?[a-zA-Z0-9]*                 return VAR;
+[a-zA-Z][a-zA-Z0-9]*"_"?[a-zA-Z0-9]*      return VAR;
 "<-"                                      return ATT;
 "<<<"                                     return READ;
 ">>>"                                     return WRITE;
