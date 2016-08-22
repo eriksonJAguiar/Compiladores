@@ -75,8 +75,9 @@
       <atribuicao>::= var att <val>
       <val>::= num | var | <expressao><opercao><expressao> | PA<expressao>PF
 
-      ###FNC
-          <LinguagemE>::= <LinguagemEr><LinguagemEv> | <LinguagemEw><texto> | soma | subtracao | divisao | multiplicacao | resto | <LinguagemEaux> <val>  | <tipo><vars> | <LinguagemEaux2><atribuicao>|
+   ##FNC
+         
+         <LinguagemE>::= <LinguagemEr><LinguagemEv> | <LinguagemEw><texto> | soma | subtracao | divisao | multiplicacao | resto | <LinguagemEaux> <val>  | <tipo><vars> | <LinguagemEaux2><atribuicao>|
 
           <cmd>::= <LinguagemEr><LinguagemEv> | <LinguagemEw><texto> | soma | subtracao | divisao | multiplicacao | resto | <LinguagemEaux> <val>  | <tipo><vars> | <LinguagemEaux2><atribuicao>|
 
@@ -136,7 +137,7 @@
 
          <LinguagemEauxpf>::= pf
 
-         ###FNC
+##FNG
              <LinguagemE>::= <LinguagemEr><LinguagemEv> | <LinguagemEw><texto> | soma | subtracao | divisao | multiplicacao | resto | <LinguagemEaux> <val>  | <tipo><vars> | <LinguagemEaux2><atribuicao>|
 
              <cmd>::= <LinguagemEr><LinguagemEv> | <LinguagemEw><texto> | soma | subtracao | divisao | multiplicacao | resto | <LinguagemEaux> <val>  | <tipo><vars> | <LinguagemEaux2><atribuicao>|
