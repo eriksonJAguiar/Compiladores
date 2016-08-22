@@ -11,18 +11,18 @@
 
 ###Gramática
 
-    <LinguagemE>::= <cmd> | <cmd><final><LinguagemE>
-    <cmd>::= <leia> | <escreva> | <opecao> | <atribuicao> | <opercao> | <declaracao>
+    <LinguagemE>::= <cmd> | <cmd>final<LinguagemE>
+    <cmd>::= <leia> | <escreva> | <atribuicao> | <opercao> | <declaracao>
     <ler>::= read var   
     <escrever>::= write <texto>
     <texto>::= string | var | <texto>
     <declaracao>::= <tipo><vars> | <tipo>var<atribuicao>
     <vars>::= var | var sep <vars> | var <atribuicao> sep <vars>
     <tipo>::= inteiro
-    <expressao>::= num | <expressao><opercao><expressao> | PA<expressao>PF | var
+    <expressao>::= num | <expressao><opercao><expressao> | pa<expressao>pf | var
     <operacao>::= soma | subtracao | divisao | multiplicacao | resto
     <atribuicao>::= var att <val>
-    <val>::= num | var | <expr>
+    <val>::= num | var | <expressao>
 
 
 ###Tokens
@@ -45,24 +45,24 @@
 | att           | "<-"                                       |                                          |
 | final         | ";"                                        |                                          |
 
+###Parser
+      LinguagemE>::= <cmd> | <cmd>final<LinguagemE>
+      <cmd>::= <ler> | <escreva> | <operacao> | <atribuicao> | <declaracao>
+      <ler>::= read var   
+      <escrever>::= write <texto>
+      <texto>::= string | var | <texto>
+      <declaracao>::= <tipo><vars> | <tipo>var<atribuicao>
+      <vars>::= var | var sep <vars> | var <atribuicao> sep <vars>
+      <tipo>::= inteiro
+      <expressao>::= num | <expressao><opercao><expressao> | pa<expressao>pf | var
+      <operacao>::= soma | subtracao | divisao | multiplicacao | resto
+      <atribuicao>::= var att <val>
+      <val>::= num | var | <expressao>
 
-  ###Parser
-
-        LinguagemE>::= <cmd> | <cmd><final><LinguagemE>
-        <cmd>::= <ler> | <escreva> | <opecao> | <atribuicao> | <opercao> | <declaracao>
-        <ler>::= read var   
-        <escrever>::= write <texto>
-        <texto>::= string | var | <texto>
-        <declaracao>::= <tipo><vars> | <tipo>var<atribuicao>
-        <vars>::= var | var sep <vars> | var <atribuicao> sep <vars>
-        <tipo>::= inteiro
-        <expressao>::= num | <expressao><opercao><expressao> | PA<expressao>PF | var
-        <operacao>::= soma | subtracao | divisao | multiplicacao | resto
-        <atribuicao>::= var att <val>
-        <val>::= num | var | <expr>
 
   ###Simplificada
-      LinguagemE>::= read var | write <texto> | soma | subtracao | divisao | multiplicacao | resto | var att <val>  | <tipo><vars> | <tipo>var<atribuicao>| <cmd><final><LinguagemE>
+
+      <LinguagemE>::= read var | write <texto> | soma | subtracao | divisao | multiplicacao | resto | var att <val>  | <tipo><vars> | <tipo>var<atribuicao>| <cmd><final><LinguagemE>
       <cmd>::= read var | write <texto> | soma | subtracao | divisao | multiplicacao | resto | var att <val>  | <tipo><vars> | <tipo>var<atribuicao>
       <ler>::= read var   
       <escrever>::= write <texto>
@@ -77,32 +77,121 @@
 
       ###FNC
           <LinguagemE>::= <LinguagemEr><LinguagemEv> | <LinguagemEw><texto> | soma | subtracao | divisao | multiplicacao | resto | <LinguagemEaux> <val>  | <tipo><vars> | <LinguagemEaux2><atribuicao>|
+
           <cmd>::= <LinguagemEr><LinguagemEv> | <LinguagemEw><texto> | soma | subtracao | divisao | multiplicacao | resto | <LinguagemEaux> <val>  | <tipo><vars> | <LinguagemEaux2><atribuicao>|
+
           <ler>::= <LinguagemEr><LinguagemEv>   
+
           <escrever>::= <LinguagemEw><texto>
+
           <texto>::= string | var
-          <declaracao>::= <tipo><vars> |  <LinguagemEaux2><atribuicao>
+
+          <declaracao>::= <tipo><vars> |  
+          <LinguagemEaux2><atribuicao>
+
           <vars>::= var | <LinguagemEaux4><vars> | var <LinguagemEaux5><vars>  
+
           <tipo>::= inteiro
-          <expressao>::= num | <LinguagemEaux7><expressao> | PA<expressao>PF | var
+
+          <expressao>::= num | <LinguagemEaux7><expressao> | <LinguagemEaux8><LinguagemEauxpf> | var
+
           <operacao>::= soma | subtracao | divisao | multiplicacao | resto
+
           <atribuicao>::= <LinguagemEaux9><val>  
+
           <val>::= num | var | <LinguagemEaux10><expressao> |  <LinguagemEaux8><LinguagemEauxpf>
           <LinguagemEaux3><LinguagemE>
+
          <LinguagemEr>::= read
+
          <LinguagemEv>::= var
+
          <LinguagemEw>::= write
+
          <LinguagemEaux>::= <Lv><LinguagemEa>
+
          <LinguagemEa>::= att
+
          <LinguagemEaux2>::= <tipo><Lv>
+
          <LinguagemEaux3>::= <cmd><final>
+
          <LinguagemEaux4>::= <LinguagemEv><LinguagemEsep>
+
          <LinguagemEsep>::= sep
+
          <LinguagemEaux5>::= <LinguagemEaux6><LinguagemEsep>
+
          <LinguagemEaux6>::= <LinguagemEv><atribuicao>
+
          <LinguagemEaux7>::= <expressao><opercao>
+
          <LinguagemEaux8>::= <LinguagemEpa><expressao>
-         <LinguagemEpa>::= PA
+
+         <LinguagemEpa>::= pf
+
          <LinguagemEaux9>::= <LinguagemEv><LinguagemEa>
+
          <LinguagemEaux10>::= <expressao><opercao>
-         <LinguagemEauxpf>::= PF
+
+         <LinguagemEauxpf>::= pf
+
+         ###FNC
+             <LinguagemE>::= <LinguagemEr><LinguagemEv> | <LinguagemEw><texto> | soma | subtracao | divisao | multiplicacao | resto | <LinguagemEaux> <val>  | <tipo><vars> | <LinguagemEaux2><atribuicao>|
+
+             <cmd>::= <LinguagemEr><LinguagemEv> | <LinguagemEw><texto> | soma | subtracao | divisao | multiplicacao | resto | <LinguagemEaux> <val>  | <tipo><vars> | <LinguagemEaux2><atribuicao>|
+
+             <ler>::= <LinguagemEr><LinguagemEv>   
+
+             <escrever>::= <LinguagemEw><texto>
+
+             <texto>::= string | var
+
+             <declaracao>::= <tipo><vars> | <LinguagemEaux2><atribuicao>
+
+             <vars>::= var | <LinguagemEaux4><vars> | <LinguagemEaux5><vars>  
+
+             <tipo>::= inteiro
+
+             <expressao>::= num | <LinguagemEaux7><expressao> | <LinguagemEaux8><LinguagemEauxpf> | var
+
+             <operacao>::= soma | subtracao | divisao | multiplicacao | resto
+
+             <atribuicao>::= <LinguagemEaux9><val>  
+
+             <val>::= num | var | <LinguagemEaux10><expressao> |  <LinguagemEaux8><LinguagemEauxpf>
+             <LinguagemEaux3><LinguagemE>
+
+            <LinguagemEr>::= read
+
+            <LinguagemEv>::= var
+
+            <LinguagemEw>::= write
+
+            <LinguagemEaux>::= <Lv><LinguagemEa>
+
+            <LinguagemEa>::= att
+
+            <LinguagemEaux2>::= <tipo><Lv>
+
+            <LinguagemEaux3>::= <cmd><final>
+
+            <LinguagemEaux4>::= <LinguagemEv><LinguagemEsep>
+
+            <LinguagemEsep>::= sep
+
+            <LinguagemEaux5>::= <LinguagemEaux6><LinguagemEsep>
+
+            <LinguagemEaux6>::= <LinguagemEv><atribuicao>
+
+            <LinguagemEaux7>::= <expressao><opercao>
+
+            <LinguagemEaux8>::= <LinguagemEpa><expressao>
+
+            <LinguagemEpa>::= pf
+
+            <LinguagemEaux9>::= <LinguagemEv><LinguagemEa>
+
+            <LinguagemEaux10>::= <expressao><opercao>
+
+            <LinguagemEauxpf>::= pf
