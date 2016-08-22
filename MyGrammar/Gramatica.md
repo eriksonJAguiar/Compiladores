@@ -128,7 +128,7 @@
 
          <LinguagemEaux8>::= <LinguagemEpa><expressao>
 
-         <LinguagemEpa>::= pf
+         <LinguagemEpa>::= pa
 
          <LinguagemEaux9>::= <LinguagemEv><LinguagemEa>
 
@@ -187,7 +187,7 @@
 
             <LinguagemEaux8>::= <LinguagemEpa><expressao>
 
-            <LinguagemEpa>::= pf
+            <LinguagemEpa>::= pa
 
             <LinguagemEaux9>::= <LinguagemEv><LinguagemEa>
 
