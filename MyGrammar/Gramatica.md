@@ -90,7 +90,7 @@
           <declaracao>::= <tipo><vars> |  
           <LinguagemEaux2><atribuicao>
 
-          <vars>::= var | <LinguagemEaux4><vars> | var <LinguagemEaux5><vars>  
+          <vars>::= var | <LinguagemEaux4><vars> | <LinguagemEaux5><vars>  
 
           <tipo>::= inteiro
 
@@ -100,8 +100,7 @@
 
           <atribuicao>::= <LinguagemEaux9><val>  
 
-          <val>::= num | var | <LinguagemEaux10><expressao> |  <LinguagemEaux8><LinguagemEauxpf>
-          <LinguagemEaux3><LinguagemE>
+          <val>::= num | var | <LinguagemEaux10><expressao> |  <LinguagemEaux8><LinguagemEauxpf>|<LinguagemEaux3><LinguagemE>
 
          <LinguagemEr>::= read
 
@@ -160,8 +159,7 @@
 
              <atribuicao>::= <LinguagemEaux9><val>  
 
-             <val>::= num | var | <LinguagemEaux10><expressao> |  <LinguagemEaux8><LinguagemEauxpf>
-             <LinguagemEaux3><LinguagemE>
+             <val>::= num | var | <LinguagemEaux10><expressao> |  <LinguagemEaux8><LinguagemEauxpf>| <LinguagemEaux3><LinguagemE>
 
             <LinguagemEr>::= read
 
