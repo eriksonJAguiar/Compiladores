@@ -46,7 +46,7 @@
 | final         | ";"                                        |                                          |
 
 ###Parser
-      LinguagemE>::= <cmd> | <cmd>final<LinguagemE>
+      <LinguagemE>::= <cmd> | <cmd>final<LinguagemE>
       <cmd>::= <ler> | <escreva> | <operacao> | <atribuicao> | <declaracao>
       <ler>::= read var   
       <escrever>::= write <texto>
@@ -58,6 +58,28 @@
       <operacao>::= soma | subtracao | divisao | multiplicacao | resto
       <atribuicao>::= var att <val>
       <val>::= num | var | <expressao>
+      
+      
+####Gramatica Modificada
+      <LinguagemE>::= <cmd><C>
+      <C>::= final<LinguagemE> | &
+      <cmd>::= <ler> | <escreva> | <operacao> | <atribuicao> | <declaracao> | <texto>
+      <ler>::= read var   
+      <escrever>::= write <texto>
+      <texto>::= string<txt> | var<txt> 
+      <txt>::= <texto> | &
+      <declaracao>::= <tipo><T>
+      <T>::= <vars> | var<atribuicao>
+      <vars>::= var<V>
+      <V>::= sep <vars> | <atribuicao> sep <vars>
+      <tipo>::= inteiro
+      <expressao>::= num<expr> | var<expr>
+      <expr>::=  <opercao><expressao><expr> | pa<expressao>pf<expr> | & 
+      <operacao>::= soma | subtracao | divisao | multiplicacao | resto
+      <atribuicao>::= var att <val>
+      <val>::= num | var | <expressao>
+      
+      
 
 
 ####Simplificada
