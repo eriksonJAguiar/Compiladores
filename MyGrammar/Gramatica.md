@@ -14,7 +14,7 @@
     <LinguagemE>::= <cmd>final | <cmd>final<LinguagemE> 
     <cmd>::= <leia> | <escreva> | <logico> | <declaracao>
     <ler>::= read var
-    <logico>::= if<expressao> AC <cmd> FC 
+    <logico>::= if<expressao> AC <cmd> FC | | if AP expressao FC AC expr FC else AC expr FC;
     <escrever>::= write <texto>
     <texto>::= string | var 
     <declaracao>::= <tipo><vars> | <tipo>var<atribuicao>
@@ -47,6 +47,7 @@
 | att           | "<-"                                       |                                          |
 | final         | ";"                                        |                                          |
 | if            | "if"                                       |                                          |
+| else          | "else"                                     |                                          |
 | AC            | "{"                                        |                                          |
 | FC            | "}"                                        |                                          |
 
