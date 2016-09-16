@@ -4,22 +4,24 @@
 
     *Inserção de dados equivale a <<<
     *Saida de dados equivale a >>>
-    *Operadores equivale a + - / * rest(resto da divisao)
+    *Operadores equivale a + - / * resto(resto da divisao)
     *variáveis equivale a...z e A..Z
     *String equivale a palavra->sua string aqui
     *atribuição de valores as variaveis equivale a x <- 2
 
 ###Gramática
 
-    <LinguagemE>::= <cmd> | <cmd>final<LinguagemE>
-    <cmd>::= <leia> | <escreva> | <atribuicao> | <opercao> | <declaracao>
-    <ler>::= read var   
+    <LinguagemE>::= <cmd>final | <cmd>final<LinguagemE> 
+    <cmd>::= <leia> | <escreva> | <logico> | <declaracao>
+    <ler>::= read var
+    <logico>::= if<expressao> AC <cmd> FC 
     <escrever>::= write <texto>
-    <texto>::= string | var | <texto>
+    <texto>::= string | var 
     <declaracao>::= <tipo><vars> | <tipo>var<atribuicao>
     <vars>::= var | var sep <vars> | var <atribuicao> sep <vars>
     <tipo>::= inteiro
-    <expressao>::= num | <expressao><opercao><expressao> | pa<expressao>pf | var
+    <calc>::= var att <expressao> 
+    <expressao>::=  num | <expressao><opercao><expressao> | pa<expressao>pf | var
     <operacao>::= soma | subtracao | divisao | multiplicacao | resto
     <atribuicao>::= var att <val>
     <val>::= num | var | <expressao>
@@ -33,7 +35,7 @@
 |  var          |[a-zA-Z]+"_"?[a-zA-Z0-9]*                   |  ID                                      |
 | read          |  "<<<"                                     |                                          |
 | write         |  ">>>"                                     |                                          |
-| string        |"palavra("[a-zA-Z]+[a-zA-Z ]*")"            |   ponteiro para tabela de símbolos       |
+| string        |"palavra('.*?')"                            |   ponteiro para tabela de símbolos       |
 | sep           |       ","                                  |                                          |
 | inteiro       |  "inteiro"                                 |                                          |
 | soma          |  "+"                                       |                                          |
@@ -44,4 +46,7 @@
 | num           | "-"?[1-9][0-9]*                            |                                          |
 | att           | "<-"                                       |                                          |
 | final         | ";"                                        |                                          |
+| if            | "if"                                       |                                          |
+| AC            | "{"                                        |                                          |
+| FC            | "}"                                        |                                          |
 
